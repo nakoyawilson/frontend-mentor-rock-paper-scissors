@@ -1,0 +1,12 @@
+.game-initial-state {
+  width: min(83.2%, 31.2rem);
+  margin: 10.5rem auto 0;
+  position: relative;
+}
+
+/* .game-initial-state::before {
+  content: "";
+  opacity: 0.2;
+  border: 15px solid var(--black);
+  transform: rotate(90deg);
+} */
