@@ -5,6 +5,11 @@ import "./App.css";
 
 const App = () => {
   const [score, setScore] = useState(0);
+
+  const increaseScore = () => {
+    setScore(score + 1);
+  };
+
   return (
     <>
       <Header score={score} />
@@ -14,9 +19,12 @@ const App = () => {
           Rules
         </button>
       </main>
+      <button onClick={increaseScore} className="rules">
+        Increase Score
+      </button>
       You Picked The House Picked You Win You Lose Play Again
       <footer>
-        <p class="attribution">
+        <p className="attribution">
           Challenge by{" "}
           <a
             href="https://www.frontendmentor.io?ref=challenge"
