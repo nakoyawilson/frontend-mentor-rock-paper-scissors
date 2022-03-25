@@ -4,6 +4,8 @@
   --font: "Barlow Semi Condensed", sans-serif;
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
+  --light-gray: hsl(228, 25%, 91%);
+  --dark-gray: hsl(228, 15%, 73%);
   --dark-text: hsl(229, 25%, 31%);
   --score-heading: hsl(229, 64%, 46%);
   --score-text: hsl(247, 10%, 37%);

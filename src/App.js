@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./component/Header";
 import GameInitialState from "./component/GameInitialState";
+import Rules from "./component/Rules";
 import "./App.css";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
       <button onClick={increaseScore} className="rules">
         Increase Score
       </button>
+      <Rules />
       You Picked The House Picked You Win You Lose Play Again
       <footer>
         <p className="attribution">

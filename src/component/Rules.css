@@ -1,0 +1,31 @@
+.rules {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  width: 100vw;
+  height: 100vh;
+}
+
+.heading-rules {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  color: var(--dark-text);
+  margin: 9.5rem auto;
+}
+
+.wrapper-rules {
+  margin: 11.3rem auto;
+  width: min(81.3%, 30.5rem);
+}
+
+.choice-wrapper {
+  width: 8.2rem;
+  height: 8.2rem;
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
