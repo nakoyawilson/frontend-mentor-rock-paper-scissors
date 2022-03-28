@@ -1,0 +1,17 @@
+.step-two {
+  display: flex;
+  gap: 5.1rem;
+  width: min(86.6667%, 32.5rem);
+  margin: 9.9rem auto 0;
+}
+
+.heading-picked {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 3.2rem;
+  letter-spacing: 1.875px;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0.3rem 0.3rem var(--shadow);
+}

@@ -1,8 +1,19 @@
 import "./HandSignal.css";
 
-const HandSignal = ({ icon, iconDescription, buttonClasses }) => {
+const HandSignal = ({
+  icon,
+  iconDescription,
+  buttonClasses,
+  buttonValue,
+  handleClick,
+}) => {
   return (
-    <button type="button" className={buttonClasses}>
+    <button
+      type="button"
+      className={buttonClasses}
+      value={buttonValue}
+      onClick={handleClick}
+    >
       <span className="visually-hidden">{iconDescription}</span>
       <span className="button-wrapper">
         <span className="icon-wrapper-shadow">

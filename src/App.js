@@ -1,14 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./component/Header";
 import GameInitialState from "./component/GameInitialState";
+import GameSecondStep from "./component/GameSecondStep";
+import GameThirdStep from "./component/GameThirdStep";
 import Rules from "./component/Rules";
 import "./App.css";
 
 const App = () => {
-  const [score, setScore] = useState(0);
+  const [userPlays, setUserPlays] = useState("");
+  const [computerPlays, setComputerPlays] = useState("");
+  const [winner, setWinner] = useState("");
+  const [score, setScore] = useState(
+    localStorage.getItem("nw-fem-rps-score")
+      ? Number(localStorage.getItem("nw-fem-rps-score"))
+      : 0
+  );
 
   const increaseScore = () => {
     setScore(score + 1);
+  };
+
+  const decreaseScore = () => {
+    setScore(score - 1);
+  };
+
+  const updateComputerPlays = () => {
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    setComputerPlays(randomNumber);
+  };
+
+  const determineWinner = () => {
+    updateComputerPlays();
+    if (userPlays > computerPlays || (userPlays === 1 && computerPlays === 3)) {
+      setWinner("user");
+      increaseScore();
+    } else if (userPlays === computerPlays) {
+      setWinner("tie");
+    } else {
+      setWinner("computer");
+      decreaseScore();
+    }
+    console.log({ userPlays, computerPlays });
+  };
+
+  const updateUserPlays = (e) => {
+    setUserPlays(Number(e.currentTarget.value));
+    determineWinner();
   };
 
   const openModal = () => {
@@ -25,20 +62,22 @@ const App = () => {
   //     : false
   // );
 
+  useEffect(() => {
+    localStorage.setItem("nw-fem-rps-score", score);
+  });
+
   return (
     <>
       <Header score={score} />
       <main>
-        <GameInitialState />
+        <GameInitialState updateUserPlays={updateUserPlays} />
+        <GameSecondStep userPlays={userPlays} computerPlays={computerPlays} />
+        <GameThirdStep winner={winner} />
         <button type="button" className="rules" onClick={openModal}>
           Rules
         </button>
+        <Rules closeModal={closeModal} />
       </main>
-      <button onClick={increaseScore} className="rules">
-        Increase Score
-      </button>
-      <Rules closeModal={closeModal} />
-      You Picked The House Picked You Win You Lose Play Again
       <footer>
         <p className="attribution">
           Challenge by{" "}
