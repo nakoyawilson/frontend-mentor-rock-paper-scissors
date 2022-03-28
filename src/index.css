@@ -3,6 +3,7 @@
 :root {
   --font: "Barlow Semi Condensed", sans-serif;
   --white: hsl(0, 0%, 100%);
+  --white-transparent: hsla(0, 0%, 100%, 0.05);
   --black: hsl(0, 0%, 0%);
   --light-gray: hsl(228, 25%, 91%);
   --dark-gray: hsl(228, 15%, 73%);
@@ -21,8 +22,17 @@
     hsl(0, 0%, 100%) 100%
   );
   --scissors-gradient: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --scissors-shadow: hsl(28, 77%, 44%);
   --paper-gradient: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --paper-shadow: hsl(230, 64%, 46%);
   --rock-gradient: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --rock-shadow: hsl(347, 75%, 35%);
+  --icon-shadow: hsl(230, 23%, 78%);
+  --icon-gradient: linear-gradient(
+    0deg,
+    hsl(0, 0%, 95%) 0%,
+    hsl(0, 0%, 85%) 98.34%
+  );
   --shadow: rgba(0, 0, 0, 0.196706);
 }
 
