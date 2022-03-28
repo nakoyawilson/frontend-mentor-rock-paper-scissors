@@ -5,6 +5,7 @@
   --white: hsl(0, 0%, 100%);
   --white-transparent: hsla(0, 0%, 100%, 0.05);
   --black: hsl(0, 0%, 0%);
+  --black-transparent: hsla(0, 0%, 0%, 0.5);
   --light-gray: hsl(228, 25%, 91%);
   --dark-gray: hsl(228, 15%, 73%);
   --dark-text: hsl(229, 25%, 31%);

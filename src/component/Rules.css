@@ -1,10 +1,17 @@
-.rules {
-  position: absolute;
+.rules-modal {
+  position: fixed;
   top: 0;
   left: 0;
   background-color: var(--white);
   width: 100vw;
   height: 100vh;
+  display: none;
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.rules-modal.show-modal {
+  display: block;
 }
 
 .heading-rules {
@@ -28,4 +35,39 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+
+/* Media Queries */
+@media screen and (min-width: 376px) {
+  .rules-modal {
+    box-shadow: 0 0.3rem 0.3rem var(--shadow);
+    border-radius: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: auto;
+  }
+
+  .rules-modal::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--black-transparent);
+    transform: translate(-5%, -5%);
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+/* Animations */
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
